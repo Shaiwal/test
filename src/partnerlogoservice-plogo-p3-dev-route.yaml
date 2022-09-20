@@ -1,0 +1,17 @@
+---
+kind: "Route"
+apiVersion: "v1"
+metadata:
+  name: "partnerlogoservice"
+  labels:
+     component: "partnerlogoservice"
+spec:
+   host: "partnerlogo-dev.cisco.com"
+   to:
+     kind: "Service"
+     name: "partnerlogoservice"
+   port:
+     targetPort: "web"
+   tls:
+     insecureEdgeTerminationPolicy: Allow
+     termination: edge
